@@ -31,8 +31,34 @@
         </svg>
       </button>
     </header>
-    <section>
-  
+    <section class="flex justify-between bg-gray-800 px-4 py-3">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg class="w-6 h-6 text-gray-600"
+               stroke="currentColor" 
+               xmlns:xlink="http://www.w3.org/1999/xlink" 
+               xmlns="http://www.w3.org/2000/svg" 
+               viewBox="0 0 24 24" 
+               preserveAspectRatio="xMidYMid meet" 
+               fill="none">
+            <path xmlns="http://www.w3.org/2000/svg" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+            </path>
+          </svg>
+        </div>
+        <input placeholder="Search by keywords" class="rounded-lg bg-gray-900 text-white py-2 pl-10 pr-4 focus:outline-none focus:shadow-lg focus:text-gray-900 focus:bg-white">
+      </div>
+      <button class="inline-flex items-center hover:bg-gray-600 pl-4 pr-3 focus:outline-none focus:shadow-outline rounded-lg bg-gray-700 shadow">
+        <svg class="h-6 w-6 fill-current text-gray-500" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm3 6a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1zm4 5a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4z" />
+        </svg>
+        <span class="ml-1 text-white font-medium">Filters</span>
+      </button>
     </section>
     <main>
       <h3>Los Angeles</h3>

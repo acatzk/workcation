@@ -18,10 +18,10 @@
             </path>
           </svg>
         </div>
-        <input placeholder="Search by keywords" class="rounded-lg bg-gray-900 text-white py-2 pl-10 pr-4 focus:outline-none focus:shadow-lg focus:text-gray-900 focus:bg-white">
+        <input placeholder="Search by keywords" class="rounded-lg bg-gray-900 text-white py-2 pl-10 pr-4 focus:outline-none focus:shadow-lg focus:text-gray-900 focus:bg-white w-full">
       </div>
       <button @click="toggle = !toggle" 
-              class="inline-flex items-center pl-4 pr-3 focus:outline-none focus:shadow-outline rounded-lg shadow"
+              class="ml-2 inline-flex items-center pl-4 pr-3 focus:outline-none focus:shadow-outline rounded-lg shadow"
               :class="{ 'bg-gray-900': toggle, 'hover:bg-gray-600 shadow bg-gray-700': !toggle }">
         <svg class="h-6 w-6 fill-current text-gray-500" 
               viewBox="0 0 24 24" 

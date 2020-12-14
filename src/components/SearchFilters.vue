@@ -1,7 +1,7 @@
 <template>
   <section class="bg-gray-800">
     <div class="flex justify-between px-4 py-3">
-      <div class="relative">
+      <div class="relative max-w-xs w-full">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
           <svg class="w-6 h-6 text-gray-600"
                 stroke="currentColor" 
@@ -32,8 +32,8 @@
       </button>
     </div>
     <form v-show="toggle">
-      <fieldset class="px-4 -mx-2 py-4 border-t border-gray-900">
-        <div class="flex">
+      <div class="px-2 py-4 border-t border-gray-900 sm:flex">
+        <div class="flex sm:w-1/2">
           <label class="block w-1/2 px-2">
             <span class="text-sm font-semibold text-gray-500">Bedrooms</span>
             <select class="mt-1 form-select block w-full rounded-lg bg-gray-700 text-white border-none shadow leading-snug focus:bg-gray-600">
@@ -47,7 +47,7 @@
             </select>
           </label>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 sm:w-1/2 sm:mt-0">
           <label class="block px-2">
             <span class="text-sm font-semibold text-gray-500">Price Range</span>
             <select class="mt-1 form-select block w-full rounded-lg bg-gray-700 text-white border-none shadow leading-snug focus:bg-gray-600">
@@ -55,59 +55,59 @@
             </select>
           </label>
         </div>
-      </fieldset>
-      <fieldset class="px-4 py-4 border-t border-gray-900">
+      </div>
+      <div class="px-4 py-4 border-t border-gray-900">
         <span class="block text-sm font-semibold text-gray-500">Property Type</span >
-        <label class="mt-3 flex items-center">
-          <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="house">
-          <span class="ml-2 text-white">House</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="apartment">
-          <span class="ml-2 text-white">Apartment</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="loft">
-          <span class="ml-2 text-white">Loft</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="townhouse">
-          <span class="ml-2 text-white">Townhouse</span>
-        </label>
-      </fieldset>
-      <fieldset class="px-4 py-4 border-t border-gray-900">
+        <div class="sm:flex">
+          <label class="mt-3 sm:w-1/4 flex items-center">
+            <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="house">
+            <span class="ml-2 text-white">House</span>
+          </label>
+          <label class="mt-3 sm:w-1/4 flex items-center">
+            <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="apartment">
+            <span class="ml-2 text-white">Apartment</span>
+          </label>
+          <label class="mt-3 sm:w-1/4 flex items-center">
+            <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="loft">
+            <span class="ml-2 text-white">Loft</span>
+          </label>
+          <label class="mt-3 sm:w-1/4 flex items-center">
+            <input class="form-radio bg-gray-900 text-indigo-500 border-none focus:bg-gray-700" type="radio" name="propertyType" value="townhouse">
+            <span class="ml-2 text-white">Townhouse</span>
+          </label>
+        </div>
+      </div>
+      <div class="px-4 py-4 border-t border-gray-900">
         <span class="block text-sm font-semibold text-gray-500">Amenities</span>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="balcony">
-          <span class="ml-2 text-white">Balcony</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="airConditioning">
-          <span class="ml-2 text-white">Air Conditioning</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="pool">
-          <span class="ml-2 text-white">Pool</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="beach">
-          <span class="ml-2 text-white">Beach</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="petFriendly">
-          <span class="ml-2 text-white">Pet friendly</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="kidFriendly">
-          <span class="ml-2 text-white">Kid friendly</span>
-        </label>
-        <label class="mt-3 flex items-center">
-          <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="beach">
-          <span class="ml-2 text-white">Beach</span>
-        </label>
-      </fieldset>
-      <div class="py-4 px-4 border-t border-gray-900 bg-gray-900">
-        <button class="block w-full py-2 rounded-lg text-white hover:bg-indigo-400 focus:outline-none bg-indigo-500 font-semibold focus:shadow-lg" @click.prevent>Update results</button>
+        <div class="sm:flex sm:-mx-2 sm:flex-wrap">
+          <label class="mt-3 flex items-center sm:w-1/4 sm:mx-2">
+            <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="balcony">
+            <span class="ml-2 text-white">Balcony</span>
+          </label>
+          <label class="mt-3 flex items-center sm:w-1/4 sm:mx-2">
+            <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="pool">
+            <span class="ml-2 text-white">Pool</span>
+          </label>
+          <label class="mt-3 flex items-center sm:w-1/4 sm:mx-2">
+            <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="beach">
+            <span class="ml-2 text-white">Beach</span>
+          </label>
+          <label class="mt-3 flex items-center sm:w-1/4 sm:mx-2">
+            <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="petFriendly">
+            <span class="ml-2 text-white">Pet friendly</span>
+          </label>
+          <label class="mt-3 flex items-center sm:w-1/4 sm:mx-2">
+            <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="kidFriendly">
+            <span class="ml-2 text-white">Kid friendly</span>
+          </label>
+          <label class="mt-3 flex items-center sm:w-1/4 sm:mx-2">
+            <input class="form-checkbox bg-gray-900 text-indigo-500 border-none rounded-sm focus:bg-gray-700" type="checkbox" name="airConditioning">
+            <span class="ml-2 text-white">Air Conditioning</span>
+          </label>
+        </div>
+      </div>
+      <div class="py-4 px-4 border-t border-gray-900 bg-gray-900 sm:text-right">
+        <button class="block w-full sm:w-auto sm:inline-block py-2 px-2 rounded-lg text-white hover:bg-indigo-400 focus:outline-none bg-indigo-500 font-semibold focus:shadow-lg" @click.prevent>Update results</button>
       </div>
     </form>
   </section>

@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-gray-800">
-    <div class="flex justify-between px-4 py-3">
+  <section class="bg-gray-800 xl:w-72">
+    <div class="flex justify-between px-4 py-3 xl:hidden">
 
       <div class="relative max-w-xs w-full">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -34,10 +34,10 @@
       </button>
     </div>
 
-    <form v-show="toggle">
-      <div class="lg:flex">
+    <form v-show="toggle" class="xl:h-full xl:flex xl:flex-col xl:justify-between">
+      <div class="lg:flex xl:block xl:overflow-y-auto">
 
-        <div class="px-4 py-4 border-t border-gray-900 lg:w-1/3">
+        <div class="px-4 py-4 border-t border-gray-900 lg:w-1/3 xl:border-t-0 xl:w-full">
           <div class="flex flex-wrap -mx-2">
             <label class="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
               <span class="text-sm font-semibold text-gray-500">Bedrooms</span>
@@ -119,7 +119,7 @@
       </div>
 
       <div class="py-4 px-4 border-t border-gray-900 bg-gray-900 sm:text-right">
-        <button class="block w-full sm:w-auto sm:inline-block py-2 px-2 rounded-lg text-white hover:bg-indigo-400 focus:outline-none bg-indigo-500 font-semibold focus:shadow-lg" @click.prevent>Update results</button>
+        <button class="block w-full sm:w-auto sm:inline-block py-2 px-2 rounded-lg text-white hover:bg-indigo-400 focus:outline-none bg-indigo-500 font-semibold focus:shadow-lg xl:block xl:w-full" @click.prevent>Update results</button>
       </div>
       
     </form>

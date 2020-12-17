@@ -1,6 +1,6 @@
 <template>
-  <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between">
-    <div class="flex items-center justify-between px-4 py-3">
+  <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between xl:bg-white">
+    <div class="flex items-center justify-between px-4 py-3 xl:w-72 xl:bg-gray-900 xl:justify-center xl:py-5">
       <div>
         <svg  class="h-8 w-auto" 
               viewBox="0 0 185 32" 
@@ -16,8 +16,8 @@
                 fill="#A3BFFA"/>
         </svg>
       </div>
-      <div class="flex">
-        <button class="focus:outline-none text-gray-500 hover:text-white focus:text-white sm:hidden" @click="toggle = !toggle">
+      <div class="flex sm:hidden">
+        <button class="focus:outline-none text-gray-500 hover:text-white focus:text-white" @click="toggle = !toggle">
           <svg  stroke="currentColor"  
                 class="w-6 h-6"
                 xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -43,23 +43,44 @@
         </button>
       </div>
     </div>
-    <nav class="sm:flex sm:items-center sm:px-4" :class="{ 'hidden': !toggle, 'block': toggle }">
-      <div class="px-2 pt-3 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
-        <a href="#" class="block px-3 py-1 font-semibold text-white hover:bg-gray-800 rounded sm:text-sm">List your property</a>
-        <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2">List trips</a>
-        <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2">Messages</a>
-      </div>
-      <div  class="px-5 py-5 sm:py-0">
-        <div class="flex items-center">
-          <img class="w-10 h-10 rounded-full object-cover border-2 border-gray-600 sm:h-8 sm:w-8"
-              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" 
-              alt="profile-name">
-          <span class="ml-2 text-gray-200 font-semibold sm:hidden">Isla Schoger</span>
+    <nav class="sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between" :class="{ 'hidden': !toggle, 'block': toggle }">
+      <div class="hidden xl:block xl:relative xl:max-w-xs xl:w-full">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg class="w-6 h-6 text-gray-600"
+                stroke="currentColor" 
+                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                preserveAspectRatio="xMidYMid meet" 
+                fill="none">
+            <path xmlns="http://www.w3.org/2000/svg" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+            </path>
+          </svg>
         </div>
-        <div  class="mt-5 sm:hidden">
-          <a href="#" class="block font-semibold text-gray-400 hover:text-white">Account settings</a>
-          <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white">Support</a>
-          <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white">Sign out</a>
+        <input placeholder="Search by keywords" class="rounded-lg border border-transparent bg-gray-200 text-gray-900 py-2 pl-10 pr-4 focus:outline-none focus:bg-white  focus:border-gray-300">
+      </div>
+      <div class="sm:flex sm:items-center">
+        <div class="px-2 pt-3 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
+          <a href="#" class="block px-3 py-1 font-semibold text-white hover:bg-gray-800 rounded sm:text-sm xl:text-gray-900">List your property</a>
+          <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900">List trips</a>
+          <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900">Messages</a>
+        </div>
+        <div  class="px-5 py-5 sm:py-0">
+          <div class="flex items-center">
+            <img class="w-10 h-10 rounded-full object-cover border-2 border-gray-600 sm:h-8 sm:w-8 xl:border-gray-300"
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" 
+                alt="profile-name">
+            <span class="ml-2 text-gray-200 font-semibold sm:hidden">Isla Schoger</span>
+          </div>
+          <div  class="mt-5 sm:hidden">
+            <a href="#" class="block font-semibold text-gray-400 hover:text-white">Account settings</a>
+            <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white">Support</a>
+            <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white">Sign out</a>
+          </div>
         </div>
       </div>
     </nav>

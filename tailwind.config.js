@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -9,6 +11,9 @@ module.exports = {
       },
       padding: {
         '5/6': '83.3333333%'
+      },
+      colors: {
+        teal: colors.teal
       }
     },
   },

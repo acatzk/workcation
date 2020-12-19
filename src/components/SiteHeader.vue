@@ -65,21 +65,29 @@
       </div>
       <div class="sm:flex sm:items-center">
         <div class="px-2 pt-3 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
-          <a href="#" class="block px-3 py-1 font-semibold text-white hover:bg-gray-800 rounded sm:text-sm xl:text-gray-900">List your property</a>
-          <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900">List trips</a>
-          <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900">Messages</a>
+          <a href="#" class="block px-3 py-1 font-semibold text-white hover:bg-gray-800 rounded sm:text-sm xl:text-gray-900 xl:hover:text-white">List your property</a>
+          <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900 xl:hover:text-white">List trips</a>
+          <a href="#" class="mt-3 px-3 py-1 block font-semibold text-white hover:bg-gray-800 rounded sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900 xl:hover:text-white">Messages</a>
         </div>
-        <div  class="px-5 py-5 sm:py-0">
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full object-cover border-2 border-gray-600 sm:h-8 sm:w-8 xl:border-gray-300"
-                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" 
-                alt="profile-name">
-            <span class="ml-2 text-gray-200 font-semibold sm:hidden">Isla Schoger</span>
+        <div  class="relative px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
+          <div class="flex items-center sm:overflow-y-hidden sm:hidden">
+            <img  class="w-10 h-10 rounded-full object-cover border-2 border-gray-600"
+                  src="@/assets/logo.png" 
+                  alt="profile-name"> <!-- https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80 -->
+            <span class="ml-4 text-gray-200 font-semibold sm:hidden">Joshua Galit</span>
           </div>
-          <div  class="mt-5 sm:hidden">
-            <a href="#" class="block font-semibold text-gray-400 hover:text-white">Account settings</a>
-            <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white">Support</a>
-            <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white">Sign out</a>
+          <button class="hidden sm:block sm:border-2 sm:w-8 sm:8 sm:border-gray-600 sm:rounded-full sm:overflow-hidden xl:border-gray-300 focus:outline-none sm:focus:border-white xl:focus:border-gray-400" @click="dropdownOpen = !dropdownOpen">
+            <img  class="w-full h-full object-cover"
+                  src="@/assets/logo.png" 
+                  alt="profile-name"> <!-- https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80 -->
+          </button>
+          <div :class="dropdownOpen ? 'sm:block' : 'sm:hidden'">
+            <button @click="dropdownOpen = false" class="hidden sm:block sm:fixed sm:opacity-10 sm:inset-0 sm:cursor-default sm:w-full sm:h-full"></button>
+            <div class="mt-5 sm:bg-white sm:rounded-lg sm:absolute sm:right-0 sm:w-48 sm:mt-3 sm:py-2 sm:shadow-xl">
+              <a href="#" class="block font-semibold text-gray-400 hover:text-white sm:text-gray-800 sm:px-2 sm:py-2 sm:hover:bg-indigo-500">Account settings</a>
+              <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white sm:text-gray-800 sm:px-2 sm:mt-0 sm:py-2 sm:hover:bg-indigo-500">Support</a>
+              <a href="#" class="mt-3 block font-semibold text-gray-400 hover:text-white sm:text-gray-800 sm:px-2 sm:mt-0 sm:py-2 sm:hover:bg-indigo-500">Sign out</a>
+            </div>
           </div>
         </div>
       </div>
@@ -92,8 +100,20 @@
     name: 'site-header',
     data () {
       return {
-        toggle: false
+        toggle: false,
+        dropdownOpen: false
       }
+    },
+    mounted () {
+      const onEscape = (e) => {
+        if (!this.dropdownOpen || e.key !== 'Escape') {
+          return
+        }
+        this.dropdownOpen = false
+      }
+      document.addEventListener('keydown', onEscape)
+
+      this.$on('hook:destroyed', () => document.removeEventListener('keydown', onEscape))
     }
   }
 </script>

@@ -15,7 +15,7 @@
             {{ property.baths === 1 ? property.baths + ' bath' : property.baths + ' baths' }}
           </div>
         </div>
-        <h4 class="mt-1 text-lg text-gray-900 font-semibold">{{ property.title }}</h4>
+        <h4 class="mt-1 text-lg text-gray-900 font-semibold truncate">{{ property.title }}</h4>
         <div class="mt-1">
           <span class="text-gray-900">{{ formattedPrice }}</span>
           <span class="ml-1 text-sm text-gray-600">/wk</span>
